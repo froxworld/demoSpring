@@ -13,6 +13,6 @@ public interface ParkingRepository extends CrudRepository<Parking, Long> {
     List<Parking> findAllByLatitudeBeforeAndLatitudeAfterAndLongitudeBeforeAndLongitudeAfter(float latAvant, float latApres, float longAvant, float longApres);
 
     List<Parking> findAllByListeVoiesContaining(Voie voie);
-    void deleteAllByNom(String nom);
+    void deleteParkingByNom(String nom);
 
 }
