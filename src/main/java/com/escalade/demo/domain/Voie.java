@@ -26,15 +26,15 @@ public class Voie {
     String nom;
     Lieu lieu;
     Parking parking;
-    Type_Voie type_voie;
-    Type_Zone type_zone;
+    TypeVoie typeVoie;
+    TypeZone typeZone;
 
-    float coordonnee_Gps_latitude;
-    float coordonnee_Gps_longitude;
+    float latitude;
+    float longitude;
 
-    Date date_de_creation;
-    Date date_de_modification;
-    Date date_de_suppression;
+    Date creation;
+    Date modification;
+    Date suppression;
 
     @Id
     @GeneratedValue
@@ -63,60 +63,60 @@ public class Voie {
         this.lieu = lieu;
     }
     @Enumerated
-    public Type_Voie getType_voie() {
-        return type_voie;
+    public TypeVoie getTypeVoie() {
+        return typeVoie;
     }
 
-    public void setType_voie(Type_Voie type_voie) {
-        this.type_voie = type_voie;
+    public void setTypeVoie(TypeVoie typeVoie) {
+        this.typeVoie = typeVoie;
     }
     @Enumerated
-    public Type_Zone getType_zone() {
-        return type_zone;
+    public TypeZone getTypeZone() {
+        return typeZone;
     }
 
-    public void setType_zone(Type_Zone type_zone) {
-        this.type_zone = type_zone;
+    public void setTypeZone(TypeZone typeZone) {
+        this.typeZone = typeZone;
     }
 
-    public float getCoordonnee_Gps_latitude() {
-        return coordonnee_Gps_latitude;
+    public float getLatitude() {
+        return latitude;
     }
 
-    public void setCoordonnee_Gps_latitude(float coordonnee_Gps_latitude) {
-        this.coordonnee_Gps_latitude = coordonnee_Gps_latitude;
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
     }
 
-    public float getCoordonnee_Gps_longitude() {
-        return coordonnee_Gps_longitude;
+    public float getLongitude() {
+        return longitude;
     }
 
-    public void setCoordonnee_Gps_longitude(float coordonnee_Gps_longitude) {
-        this.coordonnee_Gps_longitude = coordonnee_Gps_longitude;
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
 
-    public Date getDate_de_creation() {
-        return date_de_creation;
+    public Date getCreation() {
+        return creation;
     }
 
-    public void setDate_de_creation(Date date_de_creation) {
-        this.date_de_creation = date_de_creation;
+    public void setCreation(Date creation) {
+        this.creation = creation;
     }
 
-    public Date getDate_de_modification() {
-        return date_de_modification;
+    public Date getModification() {
+        return modification;
     }
 
-    public void setDate_de_modification(Date date_de_modification) {
-        this.date_de_modification = date_de_modification;
+    public void setModification(Date modification) {
+        this.modification = modification;
     }
 
-    public Date getDate_de_suppression() {
-        return date_de_suppression;
+    public Date getSuppression() {
+        return suppression;
     }
 
-    public void setDate_de_suppression(Date date_de_suppression) {
-        this.date_de_suppression = date_de_suppression;
+    public void setSuppression(Date suppression) {
+        this.suppression = suppression;
     }
 
     @ManyToOne

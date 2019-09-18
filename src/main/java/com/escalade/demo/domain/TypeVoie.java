@@ -1,6 +1,6 @@
 package com.escalade.demo.domain;
 
-public enum Type_Voie {
+public enum TypeVoie {
     BLOC,
     VOIE
 }

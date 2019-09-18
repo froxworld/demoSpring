@@ -25,8 +25,8 @@ public class Lieu {
 
     Long Id;
     String nom;
-    float coordonnee_Gps_latitude;
-    float coordonnee_Gps_longitude;
+    float latitude;
+    float longitude;
     List<Voie> listeVoies;
 
 
@@ -50,20 +50,20 @@ public class Lieu {
 
 
 
-    public float getCoordonnee_Gps_latitude() {
-        return coordonnee_Gps_latitude;
+    public float getLatitude() {
+        return latitude;
     }
 
-    public void setCoordonnee_Gps_latitude(float coordonnee_Gps_latitude) {
-        this.coordonnee_Gps_latitude = coordonnee_Gps_latitude;
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
     }
 
-    public float getCoordonnee_Gps_longitude() {
-        return coordonnee_Gps_longitude;
+    public float getLongitude() {
+        return longitude;
     }
 
-    public void setCoordonnee_Gps_longitude(float coordonnee_Gps_longitude) {
-        this.coordonnee_Gps_longitude = coordonnee_Gps_longitude;
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
 
     @OneToMany(mappedBy = "lieu")

@@ -27,11 +27,11 @@ public class Parking {
 
     String nom;
     List<Voie> listeVoies;
-    float coordonnee_Gps_latitude;
-    float coordonnee_Gps_longitude;
-    Date date_de_creation;
-    Date date_de_modification;
-    Date date_de_suppression;
+    float latitude;
+    float longitude;
+    Date creation;
+    Date modification;
+    Date suppression;
 
     @Id
     @GeneratedValue
@@ -60,43 +60,44 @@ public class Parking {
         this.listeVoies = voie_de_reference;
     }
 
-    public float getCoordonnee_Gps_latitude() {
-        return coordonnee_Gps_latitude;
+
+    public Date getCreation() {
+        return creation;
     }
 
-    public void setCoordonnee_Gps_latitude(float coordonnee_Gps_latitude) {
-        this.coordonnee_Gps_latitude = coordonnee_Gps_latitude;
+    public void setCreation(Date creation) {
+        this.creation = creation;
     }
 
-    public float getCoordonnee_Gps_longitude() {
-        return coordonnee_Gps_longitude;
+    public Date getModification() {
+        return modification;
     }
 
-    public void setCoordonnee_Gps_longitude(float coordonnee_Gps_longitude) {
-        this.coordonnee_Gps_longitude = coordonnee_Gps_longitude;
+    public void setModification(Date modification) {
+        this.modification = modification;
     }
 
-    public Date getDate_de_creation() {
-        return date_de_creation;
+    public Date getSuppression() {
+        return suppression;
     }
 
-    public void setDate_de_creation(Date date_de_creation) {
-        this.date_de_creation = date_de_creation;
+    public void setSuppression(Date suppression) {
+        this.suppression = suppression;
     }
 
-    public Date getDate_de_modification() {
-        return date_de_modification;
+    public float getLatitude() {
+        return latitude;
     }
 
-    public void setDate_de_modification(Date date_de_modification) {
-        this.date_de_modification = date_de_modification;
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
     }
 
-    public Date getDate_de_suppression() {
-        return date_de_suppression;
+    public float getLongitude() {
+        return longitude;
     }
 
-    public void setDate_de_suppression(Date date_de_suppression) {
-        this.date_de_suppression = date_de_suppression;
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
 }

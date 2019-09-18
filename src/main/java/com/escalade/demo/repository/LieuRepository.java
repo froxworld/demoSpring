@@ -9,7 +9,7 @@ public interface LieuRepository extends CrudRepository<Lieu, Long> {
 
     Lieu findByNom(String nom);
     List<Lieu> findAllByNom(String nom);
-    List<Lieu> findLieusByCoordonnee_Gps_latitudeAfterAndCoordonnee_Gps_latitudeBeforeAndCoordonnee_Gps_longitudeAfterAndCoordonnee_Gps_longitudeBefore(float coordLatApres, float coordLatAvant, float coordLongApres, float coordLongAvant);
+    List<Lieu> findAllByLatitudeBeforeAndLatitudeAfterAndLongitudeBeforeAndLongitudeAfter(float latAvant, float latApres, float longAvant, float longApres);
     void deleteByNom(String nom);
 
 }

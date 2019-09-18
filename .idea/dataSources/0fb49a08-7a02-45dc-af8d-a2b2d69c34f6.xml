@@ -918,13 +918,13 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="227" name="coordonnee_gps_latitude">
+    <column id="233" parent="227" name="latitude">
       <Position>2</Position>
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="227" name="coordonnee_gps_longitude">
+    <column id="234" parent="227" name="longitude">
       <Position>3</Position>
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
@@ -946,36 +946,36 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="228" name="coordonnee_gps_latitude">
+    <column id="238" parent="228" name="creation">
       <Position>2</Position>
-      <DataType>float|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>datetime(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="228" name="coordonnee_gps_longitude">
+    <column id="239" parent="228" name="latitude">
       <Position>3</Position>
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="228" name="date_de_creation">
+    <column id="240" parent="228" name="longitude">
       <Position>4</Position>
-      <DataType>datetime(6)|0s</DataType>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="228" name="date_de_modification">
+    <column id="241" parent="228" name="modification">
       <Position>5</Position>
       <DataType>datetime(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="228" name="date_de_suppression">
+    <column id="242" parent="228" name="nom">
       <Position>6</Position>
-      <DataType>datetime(6)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="228" name="nom">
+    <column id="243" parent="228" name="suppression">
       <Position>7</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>datetime(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="244" parent="228" name="PRIMARY">
@@ -1015,36 +1015,36 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="230" name="coordonnee_gps_latitude">
+    <column id="251" parent="230" name="creation">
       <Position>2</Position>
-      <DataType>float|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>datetime(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="230" name="coordonnee_gps_longitude">
+    <column id="252" parent="230" name="latitude">
       <Position>3</Position>
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="230" name="date_de_creation">
+    <column id="253" parent="230" name="longitude">
       <Position>4</Position>
-      <DataType>datetime(6)|0s</DataType>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="230" name="date_de_modification">
+    <column id="254" parent="230" name="modification">
       <Position>5</Position>
       <DataType>datetime(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="230" name="date_de_suppression">
+    <column id="255" parent="230" name="nom">
       <Position>6</Position>
-      <DataType>datetime(6)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="230" name="nom">
+    <column id="256" parent="230" name="suppression">
       <Position>7</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>datetime(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="257" parent="230" name="type_voie">
