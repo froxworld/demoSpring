@@ -3,6 +3,7 @@ package com.escalade.demo.domain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PreDestroy;
 import javax.persistence.*;
 import java.util.Date;
 
@@ -22,6 +23,9 @@ public class Utilisateur {
     public void logFin(){
         logger.info("creation faite de " + this.nom);
     }
+
+    @PreDestroy
+    public void destroy(){logger.info("destruction de "+ this.nom);}
 
     Long Id;
     String nom;
