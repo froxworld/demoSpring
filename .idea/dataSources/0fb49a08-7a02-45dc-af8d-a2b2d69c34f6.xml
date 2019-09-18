@@ -902,5 +902,193 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
+    <table id="226" parent="2" name="hibernate_sequence"/>
+    <table id="227" parent="2" name="lieu"/>
+    <table id="228" parent="2" name="parking"/>
+    <table id="229" parent="2" name="utilisateur"/>
+    <table id="230" parent="2" name="voie"/>
+    <column id="231" parent="226" name="next_val">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="232" parent="227" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="233" parent="227" name="coordonnee_gps_latitude">
+      <Position>2</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="234" parent="227" name="coordonnee_gps_longitude">
+      <Position>3</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="235" parent="227" name="nom">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="236" parent="227" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="237" parent="228" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="238" parent="228" name="coordonnee_gps_latitude">
+      <Position>2</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="239" parent="228" name="coordonnee_gps_longitude">
+      <Position>3</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="240" parent="228" name="date_de_creation">
+      <Position>4</Position>
+      <DataType>datetime(6)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="241" parent="228" name="date_de_modification">
+      <Position>5</Position>
+      <DataType>datetime(6)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="242" parent="228" name="date_de_suppression">
+      <Position>6</Position>
+      <DataType>datetime(6)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="243" parent="228" name="nom">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="244" parent="228" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="245" parent="229" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="246" parent="229" name="date_de_naissance">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="247" parent="229" name="nom">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="248" parent="229" name="prenom">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="249" parent="229" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="250" parent="230" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="230" name="coordonnee_gps_latitude">
+      <Position>2</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="230" name="coordonnee_gps_longitude">
+      <Position>3</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="253" parent="230" name="date_de_creation">
+      <Position>4</Position>
+      <DataType>datetime(6)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="230" name="date_de_modification">
+      <Position>5</Position>
+      <DataType>datetime(6)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="255" parent="230" name="date_de_suppression">
+      <Position>6</Position>
+      <DataType>datetime(6)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="256" parent="230" name="nom">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="257" parent="230" name="type_voie">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="258" parent="230" name="type_zone">
+      <Position>9</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="259" parent="230" name="lieu_id">
+      <Position>10</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="260" parent="230" name="parking_id">
+      <Position>11</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="261" parent="230" name="FKom9x5x5fed6chxqgvi7t3kpei">
+      <ColNames>lieu_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="262" parent="230" name="FKr1xkyskanocy0hackpxo6u0bw">
+      <ColNames>parking_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="263" parent="230" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="264" parent="230" name="FKom9x5x5fed6chxqgvi7t3kpei">
+      <ColNames>lieu_id</ColNames>
+      <RefTableName>lieu</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="265" parent="230" name="FKr1xkyskanocy0hackpxo6u0bw">
+      <ColNames>parking_id</ColNames>
+      <RefTableName>parking</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>
