@@ -30,9 +30,9 @@ public class RouteService {
         return routeRepository.findAllByLatitudeAfterAndLatitudeBeforeAndLongitudeAfterAndLongitudeBefore(firstLat, lastLat, firstLong, lastLong);
     }
 
-    public List<Parking> findAllByParking(Parking parking) {
+    public List<Parking> findAllByParking(Route route) {
 
-        return routeRepository.findAllByParking(parking);
+        return routeRepository.findAllByParking(route);
     }
 
     public List<Route> findAllByRouteType(RouteType routeType) {
@@ -53,9 +53,9 @@ public class RouteService {
     public void addRoute(Route route){routeRepository.save(route); }
 
 
-    public String findById(long id) {
+    public Route findById(long id) {
         Route route =routeRepository.findById(id).get();
-        return  route.getName();
+        return  route;
 
     }
 }

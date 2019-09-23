@@ -16,6 +16,11 @@ public class Route {
     }
 
     public Route(String name, RouteType routeType, ZoneType zoneType, int latitude, int longitude) {
+        this.name = name;
+        this.routeType = routeType;
+        this.zoneType = zoneType;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
 

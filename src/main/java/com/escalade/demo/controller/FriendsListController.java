@@ -1,8 +1,11 @@
 package com.escalade.demo.controller;
 
+import com.escalade.demo.domain.User;
 import com.escalade.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class FriendsListController {
@@ -16,11 +19,12 @@ public class FriendsListController {
     }
 
     @GetMapping(value = "/Friends")
-    public String findAllFriends(){
+    public List<User> findAllFriends(){
         //TODO chopper le nom et prenom de l'utilisateur courant
         String name = "test";
         String firstName = "test";
-        return "liste de vos amis :" + userService.findAllFriendsListByFirstNameAndLastName(name, firstName);
+
+        return userService.findAllFriendsListByFirstNameAndLastName(name, firstName);
     }
 
 }

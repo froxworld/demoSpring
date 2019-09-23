@@ -19,8 +19,14 @@ public class RouteController {
     @ApiOperation(value = "recherche une voie")
     @GetMapping( value = "/Route/{id}")
     public String findRouteById(@PathVariable int id){
-        String name = routeService.findById(id);
-        return "la voie " +id + " existe avec le nom "+name;
+        String name = routeService.findById(id).getName();
+        float latitude = routeService.findById(id).getLatitude();
+        float longitude = routeService.findById(id).getLatitude();
+        String routeType = routeService.findById(id).getRouteType().toString();
+        String zoneType = routeService.findById(id).getZoneType().toString();
+        //TODO convertir la liste des parking en string
+        //List<String> ParkinsList = routeService.findAllByParking(routeService.findById(id)).toString();
+        return "Voie :" +id + "\n nom "+name + "\n latitude:"+ latitude+ "\n longitude:"+ longitude+ " \n genre:" + routeType +"\n en:"+ zoneType;
     }
     @ApiOperation(value = "recherche les voies autour d'une coordonneGps(lat, long, distance)")
     @GetMapping( value = "/Route")
