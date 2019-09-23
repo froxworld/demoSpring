@@ -1,17 +1,21 @@
 package com.escalade.demo.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.PreDestroy;
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 
 @Entity
+@JsonIgnoreProperties(value = {"id", "modifyAt", "deleteAt"})
 public class User {
 
     Long Id;
@@ -20,16 +24,29 @@ public class User {
     Date birth;
     List<User> friendsList = new ArrayList<>();
 
+    Date createAt;
+    //@JsonIgnore
+    Date modifyAt;
+    Date deleteAt;
+
+
 
     Logger logger = LoggerFactory.getLogger(User.class);
 
-    public User(){};
+    public User(){
+        java.sql.Date date =  new java.sql.Date(Calendar.getInstance().getTime().getTime());
+        System.out.println("ici "+ date.toString());
+        this.createAt = date;
+    };
 
     public User(String name, String firstName, java.sql.Date birth, List<User> friendsList) {
         this.name =name;
         this.firstName = firstName;
         this.birth = birth;
         this.friendsList = friendsList;
+        java.sql.Date date =  new java.sql.Date(Calendar.getInstance().getTime().getTime());
+        System.out.println("ici "+ date.toString());
+        this.createAt = date;
 
     }
 
@@ -113,5 +130,27 @@ public class User {
                 '}';
     }
 
+    public Date getCreateAt() {
+        return createAt;
+    }
 
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
+    }
+
+    public Date getModifyAt() {
+        return modifyAt;
+    }
+
+    public void setModifyAt(Date modifyAt) {
+        this.modifyAt = modifyAt;
+    }
+
+    public Date getDeleteAt() {
+        return deleteAt;
+    }
+
+    public void setDeleteAt(Date deleteAt) {
+        this.deleteAt = deleteAt;
+    }
 }
