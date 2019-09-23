@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@RestController // genere les URI de notre API
 public class RouteController {
 
     @Autowired
@@ -39,18 +39,6 @@ public class RouteController {
                 longitude+searchDistance
         );
     }
-
-
-//    String name;
-//    Place place;
-//    Parking parking;
-//    RouteType routeType;
-//    ZoneType zoneType;
-//    float latitude;
-//    float longitude;
-//    Date createAt;
-//    Date modifyAt;
-//    Date deleteAt;
 
     //ajout d'une voie
     @ApiOperation(value = "ajouter d'une voie")

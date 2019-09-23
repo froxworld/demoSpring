@@ -32,7 +32,14 @@ public class Place {
     }
 
 
+    public Place() {
+    }
 
+    public Place(String name, float latitude, float longitude) {
+        this.name = name;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 
     @Id
     @GeneratedValue

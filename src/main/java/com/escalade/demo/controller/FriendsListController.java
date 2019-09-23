@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@RestController // genere les URI de notre API
 public class FriendsListController {
 
     @Autowired

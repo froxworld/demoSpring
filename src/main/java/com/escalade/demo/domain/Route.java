@@ -76,7 +76,7 @@ public class Route {
         this.place = place;
     }
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     public RouteType getRouteType() {
         return routeType;
     }
@@ -85,7 +85,7 @@ public class Route {
         this.routeType = routeType;
     }
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     public ZoneType getZoneType() {
         return zoneType;
     }

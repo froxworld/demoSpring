@@ -36,7 +36,7 @@ public class UserService {
         return userRepository.findAllFriendsListByNameAndFirstName(name, firstName);
     }
 
-    public User findByFirstNameAndLastName(String name, String firstName) {
+    public User findByNameAndFirstName(String name, String firstName) {
         return userRepository.findByNameAndFirstName(name, firstName);
     }
 
@@ -44,8 +44,11 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Optional<User> findById(Long id) {
-        return userRepository.findById(id);
+    public User findById(Long id) {
+
+        User user =userRepository.findById(id).get();
+        return  user;
+
     }
 
     public void deleteUserByNameAndFirstName(String name, String firstName) {
@@ -91,7 +94,7 @@ public class UserService {
      * @param friendFirstName : prénom
      */
     public void addFriendsList(User user, String friendName, String friendFirstName) {
-        User friend = this.findByFirstNameAndLastName(friendName, friendFirstName);
+        User friend = this.findByNameAndFirstName(friendName, friendFirstName);
         if (friend == null)
             logger.warn("cet ami n'existe pas");
         else {

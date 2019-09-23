@@ -14,8 +14,24 @@ import java.util.List;
 @Entity
 public class User {
 
+    Long Id;
+    String name;
+    String firstName;
+    Date birth;
+    List<User> friendsList = new ArrayList<>();
+
 
     Logger logger = LoggerFactory.getLogger(User.class);
+
+    public User(){};
+
+    public User(String name, String firstName, java.sql.Date birth, List<User> friendsList) {
+        this.name =name;
+        this.firstName = firstName;
+        this.birth = birth;
+        this.friendsList = friendsList;
+
+    }
 
     // a chaque fois qu'on mettra un persist on va faire un log
     @PrePersist
@@ -28,11 +44,6 @@ public class User {
         logger.info("creation faite de " + this.name);
     }
 
-    Long Id;
-    String name;
-    String firstName;
-    Date birth;
-    List<User> friendsList = new ArrayList<>();
 
     @PreDestroy
     public void destroy() {

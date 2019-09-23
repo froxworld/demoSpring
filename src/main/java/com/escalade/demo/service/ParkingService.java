@@ -2,13 +2,14 @@ package com.escalade.demo.service;
 
 import com.escalade.demo.domain.*;
 import com.escalade.demo.repository.ParkingRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class ParkingService {
-
+    @Autowired
     ParkingRepository parkingRepository;
 
     public Parking findByName(String name) {

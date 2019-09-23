@@ -15,6 +15,5 @@ public interface RouteRepository extends CrudRepository<Route, Long> {
     List<Route> findAllByRouteType(RouteType routeType);
     List<Route> findAllByZoneType(ZoneType zoneType);
     void deleteByName(String name);
-    //void addRoute(String name, RouteType routeType, ZoneType zoneType, float latitude, float longitude);
 
 }

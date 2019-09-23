@@ -10,10 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
-@RestController
-@Api(value = "utilisateur", tags = {"Api utilisateur"})
+@RestController // genere les URI de notre API
+@Api(value = "User", tags = {"Api utilisateur: (GetUser, AddUser, "})
 public class UserController {
 
     Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -56,7 +57,7 @@ public class UserController {
     public void addFriendList(@RequestParam("name") String name, @RequestParam("firstName") String firstName) {
 
         // TODO A FAIRE Trouver l'utilisateur courant qui sera loggué
-        User courant = userService.findById((long) 1).get();
+        User courant = userService.findById((long) 1);
         userService.addFriendsList(courant, name, firstName);
     }
 
