@@ -16,6 +16,8 @@ import java.util.Optional;
 
 @RestController // genere les URI de notre API
 public class PopulateController {
+
+   private int compteur =0;
     @Autowired
     UserService userService;
 
@@ -28,7 +30,7 @@ public class PopulateController {
 
     @RequestMapping("/Populate")
     void populate(){
-        int compteur =0;
+        ;
         Route route = new Route("test", RouteType.BOULDER, ZoneType.EXTERIEUR, 1, 1);
         Route route1 = new Route("test1", RouteType.BOULDER, ZoneType.EXTERIEUR, 2, 2);
         Route route2 = new Route("test2", RouteType.BOULDER, ZoneType.EXTERIEUR, 3, 3);
@@ -37,10 +39,10 @@ public class PopulateController {
         routeService.addRoute(route1);
         routeService.addRoute(route2);
         routeService.addRoute(route3);
-        userService.addUser("fa"+compteur, "auxietre"+compteur, getRandomInt(30), getRandomInt(12),getRandomInt(2020));
-        userService.addUser("adrien"+compteur, "weyl"+compteur, getRandomInt(30), getRandomInt(12),getRandomInt(2020));
-        userService.addUser("ke"+compteur, "les"+compteur, getRandomInt(30), getRandomInt(12),getRandomInt(2020));
-        userService.addUser("flo"+compteur, "duch"+compteur, getRandomInt(30), getRandomInt(12),getRandomInt(2020));
+        userService.addUser("fa"+compteur, "auxietre"+compteur, getRandomInt(30)+1, getRandomInt(11)+1,getRandomInt(2020));
+        userService.addUser("adrien"+compteur, "weyl"+compteur, getRandomInt(30)+1, getRandomInt(11)+1,getRandomInt(2020));
+        userService.addUser("ke"+compteur, "les"+compteur, getRandomInt(30)+1, getRandomInt(11)+1,getRandomInt(2020));
+        userService.addUser("flo"+compteur, "duch"+compteur, getRandomInt(30)+1, getRandomInt(11)+1,getRandomInt(2020));
         User user = userService.findByNameAndFirstName("fa"+compteur, "auxietre");
         User user2 = userService.findByNameAndFirstName("adrien"+compteur, "weyl");
         User user3 = userService.findByNameAndFirstName("ke"+compteur, "les");

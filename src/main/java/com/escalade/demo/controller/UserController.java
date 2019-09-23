@@ -14,7 +14,7 @@ import java.util.Optional;
 
 
 @RestController // genere les URI de notre API
-@Api(value = "User", tags = {"Api utilisateur: (GetUser, AddUser, "})
+@Api(value = "User", tags = {"Api utilisateur: (GetUser, AddUser, DeleteUser"})
 public class UserController {
 
     Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -24,7 +24,7 @@ public class UserController {
 
 
     //recherche la liste de tous les utilisateurs
-    @ApiOperation(value = "affiche la liste de utilisateur", response = List.class)
+    @ApiOperation(value = "Affiche la liste des utilisateurs", response = List.class)
     @GetMapping("/User")
     public List<User> findAllUser() {
         logger.info("affichage de tous les utilisateurs");
@@ -32,7 +32,7 @@ public class UserController {
     }
 
     //ajout d'un utilisateur
-    @ApiOperation(value = "ajouter un utilisateur")
+    @ApiOperation(value = "Ajouter un utilisateur (nom, prénom)")
     @PostMapping("/User")
     public Long addUser(@RequestParam("name") String name,
                         @RequestParam("firstName") String firstName,
@@ -51,15 +51,6 @@ public class UserController {
         userService.deleteUserById(id);
     }
 
-    //ajoute un nouvel ami à un utilisateur
-    @ApiOperation(value = "Ajouter un ami")
-    @PostMapping("/Friend")
-    public void addFriendList(@RequestParam("name") String name, @RequestParam("firstName") String firstName) {
-
-        // TODO A FAIRE Trouver l'utilisateur courant qui sera loggué
-        User courant = userService.findById((long) 1);
-        userService.addFriendsList(courant, name, firstName);
-    }
 
     //test pour afficher une page html d index simple
     @RequestMapping(value = "/Index", method = RequestMethod.GET)
