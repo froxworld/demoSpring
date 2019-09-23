@@ -1,4 +1,4 @@
-package configuration;
+package com.escalade.demo.configuration;
 
 
 import org.springframework.context.annotation.Bean;

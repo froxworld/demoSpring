@@ -1,6 +1,6 @@
 package com.escalade.demo.domain;
 
-public enum TypeZone {
+public enum ZoneType {
     EXTERIEUR,
     INTERIEUR
 }

@@ -8,30 +8,35 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Lieu {
-    Logger logger = LoggerFactory.getLogger(Lieu.class);
-
-    // a chaque fois qu'on mettra un persist on va faire un log
-    @PrePersist
-    public void logDebut(){
-        logger.info("creation du lieu en cours " + this.nom);
-    }
-
-    @PostPersist
-    public void logFin(){
-        logger.info("creation faite de " + this.nom);
-    }
+public class Place {
 
 
     Long Id;
-    String nom;
+    String name;
     float latitude;
     float longitude;
-    List<Voie> listeVoies;
+    List<Route> routesList;
+    
+    
+    Logger logger = LoggerFactory.getLogger(Place.class);
+
+    // a chaque fois qu'on mettra un persist on va faire un log
+    @PrePersist
+    public void startLog(){
+        logger.info("creation du place en cours " + this.name);
+    }
+
+    @PostPersist
+    public void stopLog(){
+        logger.info("creation faite de " + this.name);
+    }
+
+
 
 
     @Id
     @GeneratedValue
+//     getters et setters
     public Long getId() {
         return Id;
     }
@@ -40,12 +45,13 @@ public class Lieu {
         Id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    
+    public void setName(String nom) {
+        this.name = nom;
     }
 
 
@@ -66,12 +72,12 @@ public class Lieu {
         this.longitude = longitude;
     }
 
-    @OneToMany(mappedBy = "lieu")
-    public List<Voie> getListeVoies() {
-        return listeVoies;
+    @OneToMany(mappedBy = "place")
+    public List<Route> getRoutesList() {
+        return routesList;
     }
 
-    public void setListeVoies(List<Voie> listeVoies) {
-        this.listeVoies = listeVoies;
+    public void setRoutesList(List<Route> routesList) {
+        this.routesList = routesList;
     }
 }

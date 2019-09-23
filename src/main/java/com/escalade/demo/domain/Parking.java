@@ -14,24 +14,24 @@ public class Parking {
 
     // a chaque fois qu'on mettra un persist on va faire un log
     @PrePersist
-    public void logDebut(){
-        logger.info("creation d'un parking en cours " + this.nom);
+    public void startLog() {
+        logger.info("creation du parking en cours " + this.name);
     }
 
     @PostPersist
-    public void logFin(){
-        logger.info("creation faite de " + this.nom);
+    public void stopLog() {
+        logger.info("creation faite de " + this.name);
     }
 
-    Long Id;
 
-    String nom;
-    List<Voie> listeVoies;
+    Long Id;
+    String name;
+    List<Route> routeList;
     float latitude;
     float longitude;
-    Date creation;
-    Date modification;
-    Date suppression;
+    Date createAt;
+    Date modifyAt;
+    Date deleteAt;
 
     @Id
     @GeneratedValue
@@ -43,46 +43,47 @@ public class Parking {
         Id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @OneToMany(mappedBy = "parking")
-    public List<Voie> getListeVoies() {
-        return listeVoies;
+    public List<Route> getRouteList() {
+        return routeList;
     }
 
-    public void setListeVoies(List<Voie> voie_de_reference) {
-        this.listeVoies = voie_de_reference;
+    public void setRouteList(List<Route> route_de_reference) {
+        this.routeList = route_de_reference;
     }
 
 
-    public Date getCreation() {
-        return creation;
+    //    getters et setters
+    public Date getCreateAt() {
+        return createAt;
     }
 
-    public void setCreation(Date creation) {
-        this.creation = creation;
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
     }
 
-    public Date getModification() {
-        return modification;
+    public Date getModifyAt() {
+        return modifyAt;
     }
 
-    public void setModification(Date modification) {
-        this.modification = modification;
+    public void setModifyAt(Date modifyAt) {
+        this.modifyAt = modifyAt;
     }
 
-    public Date getSuppression() {
-        return suppression;
+    public Date getDeleteAt() {
+        return deleteAt;
     }
 
-    public void setSuppression(Date suppression) {
-        this.suppression = suppression;
+    public void setDeleteAt(Date deleteAt) {
+        this.deleteAt = deleteAt;
     }
 
     public float getLatitude() {

@@ -11,19 +11,23 @@ public class ParkingService {
 
     ParkingRepository parkingRepository;
 
-    public Parking findByNom (String nom){
-       return parkingRepository.findByNom(nom);
+    public Parking findByName(String name) {
+        return parkingRepository.findByName(name);
     }
-    public List<Parking> gps(float latAvant, float latApres, float longAvant, float longApres){
-        return  parkingRepository.findAllByLatitudeBeforeAndLatitudeAfterAndLongitudeBeforeAndLongitudeAfter(latAvant, latApres, longAvant, longApres);
-            }
 
-    public List<Parking> findAllByListeVoiesContaining(Voie voie){
-        return parkingRepository.findAllByListeVoiesContaining(voie);
+    public List<Parking> findAllByLatitudeAfterAndLatitudeBeforeAndLongitudeAfterAndLongitudeBefore(float firstLat, float lastLat, float firstLong, float lastLong) {
+        return parkingRepository.findAllByLatitudeAfterAndLatitudeBeforeAndLongitudeAfterAndLongitudeBefore(firstLat, lastLat, firstLong, lastLong);
     }
-    public void deleteAllByNom(String nom){
-        parkingRepository.deleteParkingByNom(nom);
+
+    public List<Parking> findAllByRoutesListContaining(Route route) {
+        return parkingRepository.findByRouteList(route);
     }
+
+    public void deleteParking(String name){
+        parkingRepository.deleteParkingByName(name);
+
+    }
+
 
 
 }
