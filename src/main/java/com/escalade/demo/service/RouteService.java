@@ -7,6 +7,7 @@ import com.escalade.demo.repository.*;
 
 //List
 import java.util.List;
+import java.util.Optional;
 
 //spring
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,5 +53,10 @@ public class RouteService {
     public void addRoute(Route route){routeRepository.save(route); }
 
 
+    public String findById(long id) {
+        Route route =routeRepository.findById(id).get();
+        return  route.getName();
+
+    }
 }
 

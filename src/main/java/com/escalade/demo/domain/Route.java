@@ -11,18 +11,22 @@ import java.util.Date;
 public class Route {
     Logger logger = LoggerFactory.getLogger(Route.class);
 
+    //faire toujours un constructeur par defaut au moment ou on en cree un avec parametres
+    public Route() {
+    }
+
     public Route(String name, RouteType routeType, ZoneType zoneType, int latitude, int longitude) {
     }
 
 
     // a chaque fois qu'on mettra un persist on va faire un log
     @PrePersist
-    public void logDebut(){
+    public void logDebut() {
         logger.info("creation d'une voie en cours " + this.name);
     }
 
     @PostPersist
-    public void logFin(){
+    public void logFin() {
         logger.info("creation faite de " + this.name);
     }
 
@@ -66,6 +70,7 @@ public class Route {
     public void setPlace(Place place) {
         this.place = place;
     }
+
     @Enumerated
     public RouteType getRouteType() {
         return routeType;
@@ -74,6 +79,7 @@ public class Route {
     public void setRouteType(RouteType routeType) {
         this.routeType = routeType;
     }
+
     @Enumerated
     public ZoneType getZoneType() {
         return zoneType;

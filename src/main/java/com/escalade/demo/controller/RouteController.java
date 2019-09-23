@@ -19,12 +19,13 @@ public class RouteController {
     @ApiOperation(value = "recherche une voie")
     @GetMapping( value = "/Route/{id}")
     public String findRouteById(@PathVariable int id){
-        return "la voie " +id + " existe";
+        String name = routeService.findById(id);
+        return "la voie " +id + " existe avec le nom "+name;
     }
-    @ApiOperation(value = "recherche les voie autour d'une coordonneGps(lat, long)")
-    @GetMapping( value = "/Route/{latitude}")
+    @ApiOperation(value = "recherche les voies autour d'une coordonneGps(lat, long, distance)")
+    @GetMapping( value = "/Route")
     //TODO faire un rayon sinon ou une box avec un parametre de latitude search et de longitude search
-    public List<Route> findAllByLatitudeAfterAndLatitudeBeforeAndLongitudeAfterAndLongitudeBefore(@PathVariable float latitude, float longitude, float searchDistance){
+    public List<Route> findAllByLatitudeAfterAndLatitudeBeforeAndLongitudeAfterAndLongitudeBefore(@RequestParam float latitude,@RequestParam  float longitude,@RequestParam  float searchDistance){
         return routeService.findAllByLatitudeAfterAndLatitudeBeforeAndLongitudeAfterAndLongitudeBefore(
                 latitude-searchDistance,
                 latitude+searchDistance,
@@ -57,6 +58,7 @@ public class RouteController {
         Route route =  new Route(name, routeType, zoneType, latitude, longitude);
         routeService.addRoute(route);
     }
+
 
 
 }
