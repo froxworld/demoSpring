@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController // genere les URI de notre API
+@RequestMapping("api")
 public class RouteController {
 
     @Autowired

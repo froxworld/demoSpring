@@ -14,6 +14,8 @@ import java.util.Optional;
 
 
 @RestController // genere les URI de notre API
+@RequestMapping("api")
+
 @Api(value = "User", tags = {"Api utilisateur: (GetUser, AddUser, DeleteUser"})
 public class UserController {
 

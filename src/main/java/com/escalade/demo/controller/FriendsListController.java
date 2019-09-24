@@ -12,8 +12,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
-@RestController // genere les URI de notre API
-@Api(value = "Friend", tags = {"Api friends: (GetFriend(id), findFriend(id), DeleteFriend(id)"})
+@RestController() // genere les URI de notre API
+@RequestMapping("api")
+
+@Api(value = "/Friend", tags = {"Api friends: (GetFriend(id), findFriend(id), DeleteFriend(id)"})
 public class FriendsListController {
 
     @Autowired

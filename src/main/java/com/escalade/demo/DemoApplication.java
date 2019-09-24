@@ -20,8 +20,7 @@ public class DemoApplication {
 		}
 
 
-		System.out.println("sudo service mysql start"
-		);
+		System.out.println("sudo service mysql start");
 		SpringApplication.run(DemoApplication.class, args);
 	}
 

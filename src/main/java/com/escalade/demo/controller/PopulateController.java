@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController // genere les URI de notre API
+@RequestMapping("api")
 public class PopulateController {
 
    private int compteur =0;
