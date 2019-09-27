@@ -3,12 +3,12 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 120px;
 }
 
 .App-header {
   background-color: black;
-  height: 100px;
+  height: 160px;
   padding: 10px;
   color: white;
 }
@@ -29,4 +29,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+.menu-button{
+  width: 80px;
+  height: 80px;
+
 }
