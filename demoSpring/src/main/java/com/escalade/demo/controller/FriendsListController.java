@@ -15,7 +15,7 @@ import java.util.List;
 @RestController() // genere les URI de notre API
 @RequestMapping("api")
 
-@Api(value = "/Friend", tags = {"Api friends: (GetFriend(id), findFriend(id), DeleteFriend(id)"})
+@Api(value = "/Friend", tags = {"Api friends: (GetFriend(id), findFriend(id), DeleteFriend(id))"})
 public class FriendsListController {
 
     @Autowired

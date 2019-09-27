@@ -50,8 +50,8 @@ public class Parking {
     public void setName(String name) {
         this.name = name;
     }
-
-    @OneToMany(mappedBy = "parking")
+//ajout de fetch et de cascade
+    @OneToMany(fetch =  FetchType.LAZY, mappedBy = "parking", cascade = CascadeType.ALL)
     public List<Route> getRouteList() {
         return routeList;
     }
