@@ -15,7 +15,6 @@ function App() {
     return (
         <div>
             <header>
-                <ButtonMenu/>
                 <HeaderLeft/>
 
             </header>

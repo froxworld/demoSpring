@@ -50,8 +50,9 @@ class Climber extends React.Component {
     render() {
         return (
             <div>
-                <Vide parentCallback={this.callbackFunction}/>
+                {/*<Vide parentCallback={this.callbackFunction}/>*/}
                 <p> {this.state.message} </p>
+                <Vide/>
             </div>
         )
     }
