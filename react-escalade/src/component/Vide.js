@@ -65,6 +65,7 @@ class Vide extends React.Component {
 
     query (){
         this.search(this.refs.queryBox.value)
+
     }
 
 
@@ -72,13 +73,9 @@ class Vide extends React.Component {
         Request.get(this.url).then((response) => {
             let url =`http://localhost:8080/api/${param}}`
         })
+        console.log(param)
 
     }
-
-    handleEvent = event => {
-        alert("I was clicked");
-    };
-
 
     render() {
         return (
@@ -92,14 +89,20 @@ class Vide extends React.Component {
                     {this.state.text}
                 </Button>
 
-                <input ref="queryBox" type="text" onChange={(event => {this.query()})}/>
+
                 <div>
+                    <input ref="queryBox" type="text" onChange={(event => {this.query()})}/>
+                    User Friends Populate
                     {/*<Climber parentCallback={this.callbackFunction}/>*/}
                     {/*<p> {this.state.message} </p>*/}
+                    <Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {
+                        this.query("ess")}}>Query
+                    </Button>
                 </div>
-                <Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {
-                    this.query("ess")}}>Query
-                </Button>
+                <div>
+  
+                </div>
+
             </div>
         )
     }
