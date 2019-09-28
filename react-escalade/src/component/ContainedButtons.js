@@ -1,5 +1,5 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
@@ -11,12 +11,21 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function ButtonText() {
+export default function ContainedButtons() {
+
+
+
     const classes = useStyles();
 
+    function clicked(name){
+
+        console.log("ess")
+    }
     return (
         <div>
-            <Button variant="contained" color="secondary" className={classes.button}>
+            <Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {
+                clicked("toto");
+            }}>
                 Climbers
             </Button>
             <Button variant="contained" color="secondary" className={classes.button}>
@@ -25,7 +34,7 @@ export default function ButtonText() {
             <Button variant="contained" color="secondary" className={classes.button}>
                 Cards
             </Button>
-            <Button variant="contained" color="secondary"  className={classes.button}>
+            <Button variant="contained" color="secondary" className={classes.button}>
                 PLace
             </Button>
             <Button variant="contained" href="#contained-buttons" className={classes.button}>

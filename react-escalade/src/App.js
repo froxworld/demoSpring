@@ -3,22 +3,26 @@ import './App.css';
 import 'typeface-roboto';
 import HeaderLeft from "./component/HeaderLeft";
 import BodyLeft from "./component/BodyLeft";
-import HeaderCenter from "./component/HeaderCenter";
-import HeaderRight from "./component/HeaderRight";
-import FloatingActionButtons from "./component/Climber";
+import FloatingActionButtons from "./component/climb";
+import ContainedButtons from "./component/ContainedButtons";
+import ButtonMenu from "./component/ButtonMenu";
+import Climber from "./component/Climber";
 
 
 
 function App() {
 
     return (
-        <div className="App">
-            <header className="App-header">
+        <div>
+            <header>
+                <ButtonMenu/>
                 <HeaderLeft/>
+
             </header>
             <footer>
                 <FloatingActionButtons/>
                 <BodyLeft/>
+                <Climber/>
             </footer>
         </div>
     );
