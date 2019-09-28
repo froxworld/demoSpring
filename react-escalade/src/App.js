@@ -1,46 +1,27 @@
 import React from 'react';
 import './App.css';
 import 'typeface-roboto';
-// Pour material-ui
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
-import SvgIcon from '@material-ui/core/SvgIcon';
-import Box from '@material-ui/core/Box';
-import logo from './picture/logo.svg'
+import HeaderLeft from "./component/HeaderLeft";
+import BodyLeft from "./component/BodyLeft";
+import HeaderCenter from "./component/HeaderCenter";
+import HeaderRight from "./component/HeaderRight";
+import FloatingActionButtons from "./component/Climber";
+
 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p><img src={logo} className="App-logo" alt="climbing Zone logo"/></p>
-        <p><Icon>star</Icon></p>
-        <table>
-          <tr>
-            <td>
-              <IconButton aria-label="delete">
-                <Box
-                    color="primary.main"
-                    bgcolor="background.paper"
-                    fontFamily="h6.fontFamily"
-                    fontSize={{ xs: 'h6.fontSize', sm: 'h4.fontSize', md: 'h3.fontSize' }}
-                    p={{ xs: 2, sm: 3, md: 4 }}
-                >
-                  @material-ui/system
-                </Box>
-              </IconButton>
-            </td>
-          </tr>
-        </table>
-      </header>
-      <body>
 
-      </body>
-      <footer>
-
-      </footer>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <HeaderLeft/>
+            </header>
+            <footer>
+                <FloatingActionButtons/>
+                <BodyLeft/>
+            </footer>
+        </div>
+    );
 }
 
 export default App;

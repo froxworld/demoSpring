@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Card extends React.Component{
+class Vide extends React.Component{
 
     handleEvent = event => {
         alert("I was clicked");
@@ -10,7 +10,7 @@ class Card extends React.Component{
         return  (
             <div>
 
-            </div>)
+        </div>)
     }
 }
-export default Card;
+export default Vide;
