@@ -2,6 +2,9 @@ import React from 'react'
 import {makeStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Vide from "./Vide";
+import Request from 'superagent'
+import _ from 'lodash'
+
 
 const useStyles = makeStyles(theme => ({
     button: {
@@ -16,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 const classes = {useStyles};
 
 class Climber extends React.Component {
-
+    url;
     state = {message: ""}
 
     constructor(props) {
@@ -24,8 +27,20 @@ class Climber extends React.Component {
         this.state = {
             text: "Submit",
             name: "",
-            climbers: [{name: ""}]
+            climbers: [{name: ""}],
+            movies:[{id:"", name:""}]
         }
+    }
+
+    UNSAFE_componentWillMount() {
+        http://www.omdbapi.com/?i=tt3896198
+            this.url = "http://localhost:8080/api/User"
+        Request.get(this.url).then((response) => {
+            this.setState({
+               test: response
+            })
+            console.log(this.state.test)
+        });
     }
 
     clicked(text) {
@@ -48,10 +63,16 @@ class Climber extends React.Component {
 
 
     render() {
+        var movies = _.map(this.state.test, (movie)=>{
+
+            return <li>{movie.Title}</li>
+        })
         return (
             <div>
+
                 {/*<Vide parentCallback={this.callbackFunction}/>*/}
-                <p> {this.state.message} </p>
+                <p>essai</p>
+                <p>{movies}</p>
                 <Vide/>
             </div>
         )

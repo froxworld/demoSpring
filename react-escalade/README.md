@@ -42,6 +42,12 @@ npm install @material-ui/core
 npm install @material-ui/icons --save
 npm install @material-ui/system --save
 
+http request
+npm install superagent --save
+
+ajout de Lodash pour charger des tableaux string etc
+npm install --save lodash
+
 a ajouter pour les graphiques
 // npm i @bit/primefaces.primereact.chart -- save 
 police coorespondant au bouton

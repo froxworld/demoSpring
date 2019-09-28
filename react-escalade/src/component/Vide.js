@@ -30,18 +30,18 @@ class Vide extends React.Component {
     }
 
 // avant que le component soit monter
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
     }
 // apres que le component soit effacer
-    componentWillUnmount() {
+    UNSAFE_componentWillUnmount() {
     }
     // a la receptikon de nouvelle valeurs props
-    componentWillReceiveProps(nextProps, nextContext) {
+    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         console.log(nextProps.name)
     }
 
     // a l'update du composant
-    componentWillUpdate(nextProps, nextState, nextContext) {
+    UNSAFE_componentWillUpdate(nextProps, nextState, nextContext) {
         console.log(nextState.name)
 
     }

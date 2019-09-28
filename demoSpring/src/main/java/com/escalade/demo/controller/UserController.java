@@ -9,8 +9,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Optional;
+
 
 
 @RestController // genere les URI de notre API
@@ -18,6 +20,17 @@ import java.util.Optional;
 
 @Api(value = "User", tags = {"Api utilisateur: (GetUser, AddUser, DeleteUser"})
 public class UserController {
+
+    @ModelAttribute
+    public void setResponseHeader(HttpServletResponse response) {
+        response.setHeader("Cache-Control", "no-cache");
+        response.setHeader("Access-Control-Allow-Origin","*");
+    }
+
+    @RequestMapping(value = "test")
+    public String test() {
+        return "SUCCESS";
+    }
 
     Logger logger = LoggerFactory.getLogger(UserController.class);
 

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9077d7c0-0795-475d-bf6b-58c000e8ffa5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/demoSpring.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-escalade/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/react-escalade/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-escalade/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-escalade/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-escalade/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-escalade/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-escalade/src/component/Climber.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-escalade/src/component/Climber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-escalade/src/component/Vide.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-escalade/src/component/Vide.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +69,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/react-escalade" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/demoSpring" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -119,6 +118,7 @@
     </configuration>
     <list>
       <item itemvalue="npm.start" />
+      <item itemvalue="Spring Boot.DemoApplication" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -172,6 +172,7 @@
       <workItem from="1569327039630" duration="4789000" />
       <workItem from="1569341264031" duration="731000" />
       <workItem from="1569577389775" duration="244000" />
+      <workItem from="1569705566227" duration="110000" />
     </task>
     <servers />
   </component>
