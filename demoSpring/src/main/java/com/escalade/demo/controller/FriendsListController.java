@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
 import java.util.List;
 
@@ -17,6 +18,12 @@ import java.util.List;
 
 @Api(value = "/Friend", tags = {"Api friends: (GetFriend(id), findFriend(id), DeleteFriend(id))"})
 public class FriendsListController {
+
+    @ModelAttribute
+    public void setResponseHeader(HttpServletResponse response) {
+        response.setHeader("Cache-Control", "no-cache");
+        response.setHeader("Access-Control-Allow-Origin","*");
+    }
 
     @Autowired
     UserService userService;

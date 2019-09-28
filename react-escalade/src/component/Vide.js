@@ -2,6 +2,7 @@ import React from 'react'
 import {makeStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Climber from "./Climber";
+import Request from "superagent";
 
 const useStyles = makeStyles(theme => ({
     button: {
@@ -25,16 +26,20 @@ class Vide extends React.Component {
         this.state = {
             text: "Submit",
             name: "",
-            climbers: [{name: ""}]
+            climbers: [{name: ""}],
+            enumText :"es"
         }
     }
 
 // avant que le component soit monter
     UNSAFE_componentWillMount() {
+        this.search()
     }
+
 // apres que le component soit effacer
     UNSAFE_componentWillUnmount() {
     }
+
     // a la receptikon de nouvelle valeurs props
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         console.log(nextProps.name)
@@ -58,6 +63,18 @@ class Vide extends React.Component {
         console.log(this.state.climbers.map(climber => climber.name))
     }
 
+    query (){
+        this.search(this.refs.queryBox.value)
+    }
+
+
+    search(param="User"){
+        Request.get(this.url).then((response) => {
+            let url =`http://localhost:8080/api/${param}}`
+        })
+
+    }
+
     handleEvent = event => {
         alert("I was clicked");
     };
@@ -68,17 +85,21 @@ class Vide extends React.Component {
             <div>
                 <input ref="textBox" type="text"/>
                 <input ref="difficultyBox" type="number"/>
-                <input ref="enumBox" type="text"/>
                 <Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {
                     this.clicked("test");
                     this.addClimbers()
                 }}>
                     {this.state.text}
                 </Button>
+
+                <input ref="queryBox" type="text" onChange={(event => {this.query()})}/>
                 <div>
                     {/*<Climber parentCallback={this.callbackFunction}/>*/}
-                    <p> {this.state.message} </p>
+                    {/*<p> {this.state.message} </p>*/}
                 </div>
+                <Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {
+                    this.query("ess")}}>Query
+                </Button>
             </div>
         )
     }

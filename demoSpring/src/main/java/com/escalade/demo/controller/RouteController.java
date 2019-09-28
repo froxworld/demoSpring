@@ -8,11 +8,18 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController // genere les URI de notre API
 @RequestMapping("api")
 public class RouteController {
+
+    @ModelAttribute
+    public void setResponseHeader(HttpServletResponse response) {
+        response.setHeader("Cache-Control", "no-cache");
+        response.setHeader("Access-Control-Allow-Origin","*");
+    }
 
     @Autowired
     RouteService routeService;

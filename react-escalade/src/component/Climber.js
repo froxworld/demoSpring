@@ -28,18 +28,19 @@ class Climber extends React.Component {
             text: "Submit",
             name: "",
             climbers: [{name: ""}],
-            movies:[{id:"", name:""}]
         }
     }
 
     UNSAFE_componentWillMount() {
-        http://www.omdbapi.com/?i=tt3896198
+        //http://www.omdbapi.com/?i=tt3896198
             this.url = "http://localhost:8080/api/User"
         Request.get(this.url).then((response) => {
             this.setState({
-               test: response
+               test: response.body,
+                climbers:this.state.test
+
             })
-            console.log(this.state.test)
+
         });
     }
 
@@ -63,16 +64,16 @@ class Climber extends React.Component {
 
 
     render() {
-        var movies = _.map(this.state.test, (movie)=>{
+        var climbers = _.map(this.state.test, (climber)=>{
 
-            return <li>{movie.Title}</li>
+            return <li>{climber.id}</li>
         })
         return (
             <div>
 
                 {/*<Vide parentCallback={this.callbackFunction}/>*/}
                 <p>essai</p>
-                <p>{movies}</p>
+                <p>{climbers}</p>
                 <Vide/>
             </div>
         )
