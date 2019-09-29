@@ -6,7 +6,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import {makeStyles} from '@material-ui/core/styles';
-import ContainedButtons from "../forTest/ContainedButtons";
+import HeaderMenu from "./HeaderMenu";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -29,7 +29,7 @@ class HeaderCenter extends React.Component{
                 <TableHead>
                     <TableRow>
                         <TableCell align="left"><img src={logo} className="App-logo" alt="climbing Zone logo"/></TableCell>
-                        <TableCell align="center"> <ContainedButtons/></TableCell>
+                        <TableCell align="center"> <HeaderMenu/></TableCell>
                     </TableRow>
                 </TableHead>
             </Table>

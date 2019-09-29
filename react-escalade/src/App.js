@@ -4,7 +4,11 @@ import 'typeface-roboto';
 
 import Route from "./component/mainContent/Route";
 import HeaderCenter from "./component/header/HeaderCenter";
-import Footer from "./component/footer/Footer";
+import {Footer} from "./component/footer/Footer";
+import FunctionButton from "./component/header/FunctionButton";
+import ClassButton from "./component/header/ClassButton";
+import Message from "./component/footer/Message";
+import Counter from "./component/footer/Counter";
 
 
 class App extends React.Component {
@@ -25,19 +29,21 @@ class App extends React.Component {
     }
 
     addRoute() {
-        this.setState({rout: this.refs.climberRouteBox.value})
+        this.setState({route: this.refs.climberRouteBox.value})
         console.log("app addRoute" + this.state.route)
     }
 
     addPlace() {
-        this.setState({rout: this.refs.climberPlaceBox.value})
-        console.log("app addRoute" + this.state.place)
+        this.setState({place: this.refs.climberPlaceBox.value})
+        console.log("app addPlace" + this.state.place)
     }
 
 
     render() {
         return (
             <div>
+
+
                 <header className="header">
                     <HeaderCenter/>
                     <div>
@@ -50,7 +56,7 @@ class App extends React.Component {
 
                         <input ref="climberNameBox" type="text"/>
 
-                        <button onClick1 onClick={(e) => {
+                        <button onClick onClick={(e) => {
                             this.addRoute()
 
                         }}>Climber Route
@@ -58,7 +64,7 @@ class App extends React.Component {
 
                         <input ref="climberRouteBox" type="text"/>
 
-                        <button onClick1 onClick={(e) => {
+                        <button onClick onClick={(e) => {
                             this.addPlace()
 
                         }}>Climber Place
@@ -67,14 +73,22 @@ class App extends React.Component {
 
                     </div>
                 </header>
-                <sideNav>
-                </sideNav>
-                <mainContent>
-                    <Route>{this.state.climberName}{this.state.rout}{this.state.place}{this.state.showMyComponent = true}</Route>
-                </mainContent>
-                <footer>
+                {/*<SideNav>*/}
+                {/*</SideNav>*/}
+                {/*<mainContent>*/}
+                {/*<Route>{this.state.climberName}{this.state.route}{this.state.place}</Route>*/}
+                <Route climberName={this.state.climberName}
+                       route={this.state.route}
+                       place={this.state.place}/>
+                {/*</mainContent>*/}
+                <div>
+                    <FunctionButton name={"c1"}><button>click</button><p>test 2</p></FunctionButton>
+                    <FunctionButton name={"c2"}><p>test 1</p></FunctionButton>
+                    <ClassButton name={"name "}><p>test class</p></ClassButton>
+                    <Counter/>
+                    <Message/>
                     <Footer/>
-                </footer>
+                </div>
             </div>
         );
     }

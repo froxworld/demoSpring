@@ -11,23 +11,17 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function ContainedButtons() {
+export default function HeaderMenu() {
 
+const classes = useStyles();
 
-
-    const classes = useStyles();
-
-    function clicked(name){
-
-        console.log("ess")
-    }
     return (
         <div>
-            <Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {
-                clicked("toto");
-            }}>
-                Climbers
-            </Button>
+            {/*<Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {*/}
+            {/*    clicked("toto");*/}
+            {/*}}>*/}
+            {/*    Climbers*/}
+            {/*</Button>*/}
             <Button variant="contained" color="secondary" className={classes.button}>
                 Routes
             </Button>

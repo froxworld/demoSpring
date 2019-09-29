@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
 const classes = {useStyles};
 let a =1;
 
-class Footer extends React.Component {
+class FooterOld extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -21,4 +21,4 @@ class Footer extends React.Component {
         return <li>{a}</li>
     }
 }
-export default Footer
+export default FooterOld
