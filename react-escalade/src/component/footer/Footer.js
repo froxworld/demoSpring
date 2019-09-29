@@ -1,24 +1,3 @@
-import React from 'react'
-import {makeStyles} from "@material-ui/core";
+import React from "react";
 
-const useStyles = makeStyles(theme => ({
-    button: {
-        margin: theme.spacing(1),
-    },
-    input: {
-        display: 'none',
-    },
-}));
-const classes = {useStyles};
-let a =1;
-
-class Footer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-
-        return <li>{a}</li>
-    }
-}
-export default Footer
+const Footer = () => <h5>Francois Auxietre 2020 TM</h5>
