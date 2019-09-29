@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../../picture/logo.svg'
 
 class HeaderRight extends React.Component{
 

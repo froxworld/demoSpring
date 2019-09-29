@@ -12,9 +12,9 @@ const useStyles = makeStyles(theme => ({
 }));
 const classes = {useStyles};
 
-class User extends React.Component {
+class Climber extends React.Component {
     constructor(props) {
         super(props);
     }
 }
-export default User
+export default Climber

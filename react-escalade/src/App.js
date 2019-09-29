@@ -1,89 +1,85 @@
 import React from 'react';
 import './App.css';
 import 'typeface-roboto';
-import HeaderLeft from "./component/header/HeaderLeft";
-import BodyLeft from "./component/forTest/BodyLeft";
-import FloatingActionButtons from "./component/forTest/climb";
-import ContainedButtons from "./component/forTest/ContainedButtons";
-import HeaderCenter from "./component/header/HeaderCenter";
-import Climber from "./component/forTest/Climber";
+
 import Route from "./component/mainContent/Route";
+import HeaderCenter from "./component/header/HeaderCenter";
+import Footer from "./component/footer/Footer";
 
 
+class App extends React.Component {
 
-function App() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            route: "",
+            climberName: "",
+            place: "",
+            showMyComponent: false
+        }
+    }
 
-    return (
-        <div>
-            <header>
-                <HeaderLeft/>
+    addName() {
+        this.setState({climberName: this.refs.climberNameBox.value})
+        console.log("app addName" + this.state.climberName)
+    }
 
-            </header>
-            <footer>
-                {/*<FloatingActionButtons/>*/}
-                {/*<BodyLeft/>*/}
-                <Route/>
-            </footer>
-        </div>
-    );
+    addRoute() {
+        this.setState({rout: this.refs.climberRouteBox.value})
+        console.log("app addRoute" + this.state.route)
+    }
+
+    addPlace() {
+        this.setState({rout: this.refs.climberPlaceBox.value})
+        console.log("app addRoute" + this.state.place)
+    }
+
+
+    render() {
+        return (
+            <div>
+                <header className="header">
+                    <HeaderCenter/>
+                    <div>
+
+
+                        <button onClick onClick={(e) => {
+                            this.addName()
+                        }}>Climber Name
+                        </button>
+
+                        <input ref="climberNameBox" type="text"/>
+
+                        <button onClick1 onClick={(e) => {
+                            this.addRoute()
+
+                        }}>Climber Route
+                        </button>
+
+                        <input ref="climberRouteBox" type="text"/>
+
+                        <button onClick1 onClick={(e) => {
+                            this.addPlace()
+
+                        }}>Climber Place
+                        </button>
+                        <input ref="climberPlaceBox" type="text"/>
+
+                    </div>
+                </header>
+                <sideNav>
+                </sideNav>
+                <mainContent>
+                    <Route>{this.state.climberName}{this.state.rout}{this.state.place}{this.state.showMyComponent = true}</Route>
+                </mainContent>
+                <footer>
+                    <Footer/>
+                </footer>
+            </div>
+        );
+    }
+
 }
 
+
 export default App;
-
-
-// render() {
-//     return (
-//       <div>
-//         <div className="App">
-//           <header className="App-header">
-//             <table>
-//               <tbody>
-//            <div>
-//               <ButtonToolbar>
-//                 <Button variant="dark" size="lg" className="menu-button ">
-//                   <Image className="menu-button" src="login.jpg"></Image>
-//                 </Button>
-//                 {Climber}
-//                 <Button variant="dark" size="lg" className="menu-button ">
-//                   <Image src="grimpeur.jpg"></Image>
-//                 </Button>
-//                 <Button variant="dark" size="lg" className="menu-button ">
-//                   <Image src="montagne.png"></Image>
-//                 </Button>
-//                 <Button variant="dark" size="lg">
-//                   <Image  src="parametre.png" ></Image>
-//                 </Button>
-//                 <Button variant="dark" size="lg">
-//                   <Image className="menu-button " src="reussite.png" ></Image>
-//                 </Button>
-//                 <Button variant="dark" size="lg">
-//                   <Image className="menu-button " src="time.png" ></Image>
-//                 </Button>
-//               </ButtonToolbar>
-//             </div>
-//               </tbody>
-//             </table>
-//           </header>
-//         </div>
-//         <div className="wrapper">
-//           <div className="one">{list1}</div>
-//           <div className="two"><User name="toto"/></div>
-//           <div>
-//             <div className="titreFriends">Friends</div>
-//             <div className="three">
-//               <ul>{climbers}</ul>
-//             </div>
-//           </div>
-//           <div className="four"><Card id="1" card="une" feedback="name"/>
-//             <div className="five">Five</div>
-//             <div className="six">Six</div>
-//           </div>
-//           <div>
-//             <footer className="footer"><Footer name="Francois auxietre"/><Footer name="2019 TM"/></footer>
-//           </div>
-//         </div>
-//
-//       </div>
-//     )
-//   }
-//  }

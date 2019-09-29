@@ -1,10 +1,25 @@
 import React, {useState} from 'react'
+import Button from "@material-ui/core/Button";
+import {makeStyles} from "@material-ui/core";
 
-function Route() {
+const useStyles = makeStyles(theme => ({
+    button: {
+        margin: theme.spacing(1),
+    },
+    input: {
+        display: 'none',
+    },
+}));
 
-    let name= "fa";
-    let route = "plus belle que le ciel et la mer";
-    let place = "Auray"
+const classes = {useStyles};
+let x=1
+
+function Route(props) {
+
+    let name= props.children[0];
+    let route = props.children[1];
+    let place = props.children[2];
+    let showMyComponent = props.children[3];
 
     const [items, setItems] = useState([]);
     const addItem = () =>{
@@ -13,21 +28,19 @@ function Route() {
             value: Math.random(),
             name:name,
             route:route,
-            place:place
+            place:place,
+            showMyComponent: showMyComponent
         }])
     };
+    console.log("Route  "+props.children)
     return (
         <div>
-            <button onClick={addItem}>add a climber</button>
-            <ul>
-                {items.map(item =>( <li key={item.id}>{item.id}{" " }{item.name}</li>))}
-                {/*<button onClick={() => setCount(count + 1)}>Count {count}</button>*/}
-            </ul>
-            <ul>
-                {items.map(item =>( <li key={item.id}> {item.name}{" " }{item.route}{" " }{item.place}</li>))}
-                {/*<button onClick={() => setCount(count + 1)}>Count {count}</button>*/}
-            </ul>
 
+            <ul>
+                {items.map(item =>( <li key={item.id}>Climber: {item.name}{" Route:" }{item.route}{" Place" }{item.place}</li>))}
+                {/*<button onClick={() => setCount(count + 1)}>Count {count}</button>*/}
+            </ul>
+            <button onClick={addItem}>add a climber</button>
         </div>
     )
 }

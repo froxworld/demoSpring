@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import Button from "@material-ui/core/Button";
+import React from 'react'
 import {makeStyles} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
@@ -11,10 +10,15 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 const classes = {useStyles};
+let a =1;
 
-class User extends React.Component {
+class Footer extends React.Component {
     constructor(props) {
         super(props);
     }
+    render() {
+
+        return <li>{a}</li>
+    }
 }
-export default User
+export default Footer

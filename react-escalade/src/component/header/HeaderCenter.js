@@ -1,72 +1,42 @@
-import React from 'react';
+import React from 'react'
+import logo from '../../picture/logo.svg'
+import Table from '@material-ui/core/Table';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 import {makeStyles} from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import ContainedButtons from "../forTest/ContainedButtons";
 
 const useStyles = makeStyles(theme => ({
-    button: {
-        margin: theme.spacing(1),
+    root: {
+        width: '120%',
+        marginTop: theme.spacing(3),
+        overflowX: 'auto',
     },
-    input: {
-        display: 'none',
+    table: {
+        minWidth: 650,
     },
 }));
 
-
-const classes = {useStyles};
-
-class HeaderCenter extends React.Component {
-
-    constructor(props) {
-        super();
-        this.state ={text:"initial"}
-    }
-
-
-    clickBouton(text) {
-        this.setState({text})
-    }
-
+class HeaderCenter extends React.Component{
 
     render() {
-        return (
+        return  (
             <div>
-                <Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {
-                    this.clickBouton("toto");
-                }}>
-                    Climbers
-                </Button>
-                <Button variant="contained" color="secondary" className={classes.button}>
-                    Routes
-                </Button>
-                <Button variant="contained" color="secondary" className={classes.button}>
-                    Cards
-                </Button>
-                <Button variant="contained" color="secondary" className={classes.button}>
-                    PLace
-                </Button>
-                <Button variant="contained" href="#contained-buttons" className={classes.button}>
-                    Link
-                </Button>
-                <Button variant="contained" href="#contained-buttons" className={classes.button}>
-                    {this.state.text}
-                </Button>
-
-
-                <input
-                    accept="image/*"
-                    className={classes.input}
-                    id="contained-button-file"
-                    multiple
-                    type="file"
-                />
-                <label htmlFor="contained-button-file">
-                    <Button variant="contained" component="span" className={classes.button}>
-                        Upload
-                    </Button>
-                </label>
+            <Paper className={useStyles.root}>
+            <Table className={useStyles.table}>
+                <TableHead>
+                    <TableRow>
+                        <TableCell align="left"><img src={logo} className="App-logo" alt="climbing Zone logo"/></TableCell>
+                        <TableCell align="center"> <ContainedButtons/></TableCell>
+                    </TableRow>
+                </TableHead>
+            </Table>
+            </Paper>
             </div>
+
         )
     }
 }
-
 export default HeaderCenter;
