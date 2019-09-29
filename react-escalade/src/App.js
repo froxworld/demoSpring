@@ -9,6 +9,8 @@ import FunctionButton from "./component/header/FunctionButton";
 import ClassButton from "./component/header/ClassButton";
 import Message from "./component/footer/Message";
 import Counter from "./component/footer/Counter";
+import CompleteMessage from "./component/footer/CompleteMessage";
+import FunctionMessage from "./component/footer/FunctionMessage";
 
 
 class App extends React.Component {
@@ -85,8 +87,11 @@ class App extends React.Component {
                     <FunctionButton name={"c1"}><button>click</button><p>test 2</p></FunctionButton>
                     <FunctionButton name={"c2"}><p>test 1</p></FunctionButton>
                     <ClassButton name={"name "}><p>test class</p></ClassButton>
-                    <Counter/>
+                    <Counter addValue={1} name={"increment +1"}/>
+                    <Counter addValue={5} name={"increment +5"}/>
                     <Message/>
+                    <CompleteMessage message={"test"} date={Date.now()}/>
+                    <FunctionMessage name={"essai"} message={"voici un test de message passé a props"}/>
                     <Footer/>
                 </div>
             </div>

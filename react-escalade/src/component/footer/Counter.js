@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
+/**
+ *  pass addValue 1 to add 1 and name={"nameOfTheButton"}
+ *  pass addValue 5 to add 5 and name={"nameOfTheButton"}
+ */
 class Counter extends Component {
 
     constructor(props) {
@@ -24,28 +27,21 @@ class Counter extends Component {
     }
 
     incrementBis() {
-        this.setState((previousState) => ({
-                count: previousState.count + 1
+        this.setState((previousState, props) => ({
+                count: previousState.count + props.addValue
             }), () => {
                 console.log(this.state.count)
             })
     }
 
-    increment5() {
-        this.incrementBis();
-        this.incrementBis();
-        this.incrementBis();
-        this.incrementBis();
-        this.incrementBis();
-    }
 
     render() {
         return (
             <div>
                 count : {this.state.count}
                 <button onClick={() => {
-                    this.increment5()
-                }}>Increment
+                    this.incrementBis()
+                }}>{this.props.name}
                 </button>
             </div>
         );
