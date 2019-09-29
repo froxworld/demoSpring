@@ -19,8 +19,8 @@ function App() {
 
             </header>
             <footer>
-                <FloatingActionButtons/>
-                <BodyLeft/>
+                {/*<FloatingActionButtons/>*/}
+                {/*<BodyLeft/>*/}
                 <Climber/>
             </footer>
         </div>

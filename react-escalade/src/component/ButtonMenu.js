@@ -22,7 +22,7 @@ class ButtonMenu extends React.Component {
     }
 
 
-    clicked(text) {
+    clickBouton(text) {
         this.setState({text})
     }
 
@@ -31,7 +31,7 @@ class ButtonMenu extends React.Component {
         return (
             <div>
                 <Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {
-                    this.clicked("toto");
+                    this.clickBouton("toto");
                 }}>
                     Climbers
                 </Button>

@@ -1,8 +1,8 @@
 import React from 'react'
 import {makeStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Climber from "./Climber";
 import Request from "superagent";
+import _ from "lodash";
 
 const useStyles = makeStyles(theme => ({
     button: {
@@ -17,8 +17,6 @@ const useStyles = makeStyles(theme => ({
 const classes = {useStyles};
 
 class Vide extends React.Component {
-
-
     state = {message: ""}
 
     constructor(props) {
@@ -26,8 +24,8 @@ class Vide extends React.Component {
         this.state = {
             text: "Submit",
             name: "",
-            climbers: [{name: ""}],
-            enumText :"es"
+            climbs: [1,2],
+            enumText: "es"
         }
     }
 
@@ -42,65 +40,83 @@ class Vide extends React.Component {
 
     // a la receptikon de nouvelle valeurs props
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
-        console.log(nextProps.name)
+        console.log(this.state.text)
     }
 
     // a l'update du composant
     UNSAFE_componentWillUpdate(nextProps, nextState, nextContext) {
-        console.log(nextState.name)
-
     }
 
-    clicked(text) {
-        this.setState({text: this.refs.textBox.value})
-    }
 
     addClimbers = () => {
-        this.setState({
-            climbers: this.state.climbers.concat([{name: this.refs.textBox.value}])
+// append an array
+        const newArr = [1, 2, 3, 4]
 
-        });
-        console.log(this.state.climbers.map(climber => climber.name))
+
+// Append a single item
+        climbs: this.state.climbs.concat("test")
+        console.log(this.state.climbs)
     }
 
-    query (){
+    query() {
         this.search(this.refs.queryBox.value)
 
     }
 
 
-    search(param="User"){
+    search(param = "User") {
+
+        let url = `http://localhost:8080/api/${param}}`
         Request.get(this.url).then((response) => {
-            let url =`http://localhost:8080/api/${param}}`
+            // this.state.climbers = response.body
         })
-        console.log(param)
+        console.log(url)
 
     }
 
+
+    clicked(text) {
+        this.setState({text: this.refs.te.value})
+
+        console.log({text})
+    }
+
     render() {
+        var climbers = _.map(this.state.test, (climber) => {
+
+            return <li>{climber.id}</li>
+        })
         return (
             <div>
-                <input ref="textBox" type="text"/>
-                <input ref="difficultyBox" type="number"/>
+                <input ref="te" type="text"/>
+
+                {/*<input ref="difficultyBox" type="number"/>*/}
+
+
                 <Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {
-                    this.clicked("test");
+                    this.clicked()
                     this.addClimbers()
                 }}>
-                    {this.state.text}
+                    ess
                 </Button>
 
-
                 <div>
-                    <input ref="queryBox" type="text" onChange={(event => {this.query()})}/>
+                    <input ref="queryBox" type="text" onChange={(event => {
+                        this.query()
+                    })}/>
                     User Friends Populate
+                    <ul>{climbers}</ul>
                     {/*<Climber parentCallback={this.callbackFunction}/>*/}
                     {/*<p> {this.state.message} </p>*/}
                     <Button variant="contained" color="secondary" className={classes.button} onClick={(e) => {
-                        this.query("ess")}}>Query
+                        this.query("ess")
+                    }}>Query
                     </Button>
-                </div>
-                <div>
-  
+                    <ul>
+                        {this.state.climbs.map(item => (
+                            <li key={item}>{item}</li>
+                        ))}
+                    </ul>
                 </div>
 
             </div>
