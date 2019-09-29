@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../picture/logo.svg'
+import logo from '../../picture/logo.svg'
 
 class HeaderCenter extends React.Component{
 

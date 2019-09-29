@@ -20,25 +20,20 @@ const classes = {useStyles};
 
 class Climber extends React.Component {
     test = 10;
+    test1 = "";
 
     url;
-    state = {message: ""}
 
     constructor(props) {
-        super();
+        super(props);
         this.state = {
-            climbers: [{'id': 0, 'name': 'francois', 'level': '8a', 'place': 'Rennes'},
-                {'id': 1, 'name': 'francois', 'level': '8a', 'place': 'Rennes'},
-                {'id': 2, 'name': 'théotime', 'level': '8b', 'place': 'Rennes'},
-                {'id': 3, 'name': 'léo', 'level': '8a', 'place': 'Rennes'},
-                {'id': 4, 'name': 'alma', 'level': '7b', 'place': 'Rennes'},
-                {'id': 5, 'name': 'alex', 'level': '6c', 'place': 'Rennes'},
-                {'id': 6, 'name': 'Elliot', 'level': '6b', 'place': 'Rennes'},
-                {'id': 7, 'name': 'justin', 'level': '6c', 'place': 'Rennes'},
-                {'id': 8, 'name': 'roland', 'level': '7c', 'place': 'Rennes'},
-                {'id': 9, 'name': 'marie', 'level': '7a', 'place': 'Rennes'}]
+            numbers: [],
+            climbers: [],
+            Route: [],
+            Place: []
         }
     }
+
 
     UNSAFE_componentWillMount() {
         //http://www.omdbapi.com/?i=tt3896198
@@ -49,19 +44,22 @@ class Climber extends React.Component {
         //         climbers:this.state.test
         //
         // //     })
-        //
+        //        this.setState((state, props) => ({
+        //             counter: state.counter + props.increment
+        //         }));
         // });
+        // fetchComments().then(response => {
+        //     this.setState({
+        //         comments: response.comments
+        //     });
+        // Correct
+
     }
 
     clicked(text) {
-        this.test=this.state.climbers+1;
-        console.log(this.test)
-
-        this.setState({
-            climbers: this.state.climbers.push({id:this.test, name: 't', level: 'r', place: 'r'})
-
-        });
-        console.log(this.state.climbers.map(climber => climber.name), this.state.climbers.map(climber => climber.level))
+        this.test1++;
+        this.test++;
+        console.log(this.test, this.test1);
     }
 
     render() {

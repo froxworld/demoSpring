@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
 
 const classes = {useStyles};
 
-class ButtonMenu extends React.Component {
+class HeaderCenter extends React.Component {
 
     constructor(props) {
         super();
@@ -69,4 +69,4 @@ class ButtonMenu extends React.Component {
     }
 }
 
-export default ButtonMenu;
+export default HeaderCenter;

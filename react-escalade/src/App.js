@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import 'typeface-roboto';
-import HeaderLeft from "./component/HeaderLeft";
-import BodyLeft from "./component/BodyLeft";
-import FloatingActionButtons from "./component/climb";
-import ContainedButtons from "./component/ContainedButtons";
-import ButtonMenu from "./component/ButtonMenu";
-import Climber from "./component/Climber";
+import HeaderLeft from "./component/header/HeaderLeft";
+import BodyLeft from "./component/forTest/BodyLeft";
+import FloatingActionButtons from "./component/forTest/climb";
+import ContainedButtons from "./component/forTest/ContainedButtons";
+import HeaderCenter from "./component/header/HeaderCenter";
+import Climber from "./component/forTest/Climber";
+import Route from "./component/mainContent/Route";
 
 
 
@@ -21,7 +22,7 @@ function App() {
             <footer>
                 {/*<FloatingActionButtons/>*/}
                 {/*<BodyLeft/>*/}
-                <Climber/>
+                <Route/>
             </footer>
         </div>
     );
