@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 
-class CompleteMessage extends Component {
+class ClassCompleteMessage extends React.Component {
 
     constructor({message, date, info, climberName, topic}) {
         super();
@@ -31,4 +31,4 @@ class CompleteMessage extends Component {
 }
 
 
-export default CompleteMessage;
+export default ClassCompleteMessage;

@@ -1,16 +1,9 @@
 import React from 'react';
 import './App.css';
 import 'typeface-roboto';
+import MainHeader from "./component/header/MainHeader";
 
-import Route from "./component/mainContent/Route";
-import HeaderCenter from "./component/header/HeaderCenter";
-import {Footer} from "./component/footer/Footer";
-import FunctionButton from "./component/header/FunctionButton";
-import ClassButton from "./component/header/ClassButton";
-import Message from "./component/footer/Message";
-import Counter from "./component/footer/Counter";
-import CompleteMessage from "./component/footer/CompleteMessage";
-import FunctionMessage from "./component/footer/FunctionMessage";
+
 
 
 class App extends React.Component {
@@ -43,57 +36,14 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-
-
-                <header className="header">
-                    <HeaderCenter/>
-                    <div>
-
-
-                        <button onClick onClick={(e) => {
-                            this.addName()
-                        }}>Climber Name
-                        </button>
-
-                        <input ref="climberNameBox" type="text"/>
-
-                        <button onClick onClick={(e) => {
-                            this.addRoute()
-
-                        }}>Climber Route
-                        </button>
-
-                        <input ref="climberRouteBox" type="text"/>
-
-                        <button onClick onClick={(e) => {
-                            this.addPlace()
-
-                        }}>Climber Place
-                        </button>
-                        <input ref="climberPlaceBox" type="text"/>
-
-                    </div>
-                </header>
-                {/*<SideNav>*/}
-                {/*</SideNav>*/}
-                {/*<mainContent>*/}
-                {/*<Route>{this.state.climberName}{this.state.route}{this.state.place}</Route>*/}
-                <Route climberName={this.state.climberName}
-                       route={this.state.route}
-                       place={this.state.place}/>
-                {/*</mainContent>*/}
-                <div>
-                    <FunctionButton name={"c1"}><button>click</button><p>test 2</p></FunctionButton>
-                    <FunctionButton name={"c2"}><p>test 1</p></FunctionButton>
-                    <ClassButton name={"name "}><p>test class</p></ClassButton>
-                    <Counter addValue={1} name={"increment +1"}/>
-                    <Counter addValue={5} name={"increment +5"}/>
-                    <Message/>
-                    <CompleteMessage message={"test"} date={Date.now()}/>
-                    <FunctionMessage name={"essai"} message={"voici un test de message passé a props"}/>
-                    <Footer/>
-                </div>
+            <div className={"app"}>
+                {<MainHeader class={"appHeader"}/>}
+                {/*{<SideNav className={"appSideNav"}/>}*/}
+                {/*{<MainContent/>}*/}
+                {/*{<Footer/>}*/}
+                {/*<Route climberName={this.state.climberName}*/}
+                {/*       route={this.state.route}*/}
+                {/*       place={this.state.place}/>*/}
             </div>
         );
     }

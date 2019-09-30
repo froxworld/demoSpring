@@ -24,8 +24,8 @@ class HeaderCenter extends React.Component{
     render() {
         return  (
             <div>
-            <Paper className={useStyles.root}>
-            <Table className={useStyles.table}>
+            <Paper className={"ciucouc"}>
+            <Table className={"cjdjs"}>
                 <TableHead>
                     <TableRow>
                         <TableCell align="left"><img src={logo} className="App-logo" alt="climbing Zone logo"/></TableCell>

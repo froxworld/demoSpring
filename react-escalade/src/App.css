@@ -20,21 +20,22 @@
   }
 }
 
-.App-header {
+.appHeader {
   background-color: #282c34;
-  height: 140px;
-  display: flex;
-  flex-direction: column;
-  /*align-items: center;*/
-  width: 100%;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  height: 20%;
 }
+
+
 
 .App-link {
   color: #09d3ac;
 }
 .Footer{
   text-align: left;
+}
+
+
+.app{
+  height: 100%;
 }
