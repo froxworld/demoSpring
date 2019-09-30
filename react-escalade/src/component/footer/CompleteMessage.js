@@ -16,10 +16,15 @@ class CompleteMessage extends Component {
 
     }
 
+
     render() {
+        // ou ceci
+         const {messageP, dateP, infoP, climberNameP, topicP} = this.props
+         const {messageS, dateS, infoS, climberNameS, topicS} = this.state
         return (
             <div>
-                VOILA {this.state.message}
+                props:{messageP}{dateP}{infoP}{climberNameP}{topicP}{messageP}
+                state:{messageS}{dateS}{infoS}{climberNameS}{topicS}{messageS}
             </div>
         );
     }

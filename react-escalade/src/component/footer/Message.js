@@ -1,7 +1,6 @@
-import React, {Component} from "react";
+import React from "react";
 
 class Message extends React.Component {
-
 
 
     constructor(props) {
@@ -14,9 +13,9 @@ class Message extends React.Component {
         }
     }
 
-    changeMessage () {
+    changeMessage() {
         this.setState({
-            message : "thanks for suscribing"
+            message: "thanks for suscribing"
 
         })
     }
